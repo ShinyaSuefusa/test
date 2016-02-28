@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" ng-app="myApp">
+<head>
+	<title>Getting Started: Serving Web Content</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="" th:src="'js/sample.js'"></script>
+</head>
+<body ng-controller="MyController">
+	<p th:text="'Hello, ' + ${name} + '!'" />
+	<div ng-bind="data"></div>
+	<div><button ng-click="getValue()">click me!</button></div>
+</body>
+</html>
