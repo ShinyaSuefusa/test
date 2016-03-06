@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="ja" ng-app="myApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js"></script>
+<script src="../static/js/angular-ui-router.min.js" th:src="'js/angular-ui-router.min.js'"></script>
+<script src="../static/js/app.js" th:src="'js/app.js'"></script>
+<script src="../static/js/route.js" th:src="'js/route.js'"></script>
+<script src="../static/js/controller.js" th:src="'js/controller.js'"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="'css/style.css'" />
+<title>Angular Route Demo</title>
+</head>
+<body ng-controller="MyController">
+	<div>
+		<header>
+			<h1>Angular Route Demo</h1>
+			<nav>
+				<div><a ui-sref="view({path:'girl'})">あかちゃん</a></div>
+				<div><a ui-sref="view({path:'wheel'})">観覧車</a></div>
+				<div><a ui-sref="view({path:'flower'})">花畑</a></div>
+				<div><a ui-sref="view({path:'couple'})">カップル</a></div>
+			</nav>
+		</header>
+		<article ui-view="view" ng-cloak="" class="pageContainer"></article>
+		<footer><small>copyright(c)sample.com</small></footer>
+	</div>
+</body>
+</html>
