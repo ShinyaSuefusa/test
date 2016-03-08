@@ -1,11 +1,25 @@
 angular.module('myApp')
 .config(function($stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('/girl');
+	$urlRouterProvider.when('/', '/baby')
+	$urlRouterProvider.otherwise('/baby');
 	$stateProvider
-		.state('view', {
+		.state('list', {
 			url: '/:path',
+			params: {
+				initialize: false,
+				list: null
+		    },
 			views: {
-				'view': {
+				'@': {
+					templateUrl:'/list',
+					controller:'ViewController'
+				}
+			}
+		})
+		.state('list.page', {
+			url: '/:id',
+			views: {
+				'@': {
 					templateUrl:'/page',
 					controller:'ViewController'
 				}

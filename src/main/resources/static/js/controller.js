@@ -8,10 +8,16 @@ angular.module('myApp')
 	};
 }])
 .controller('ViewController', ['$scope', '$state', '$resource', function($scope,$state,$resource) {
-	var Photo = $resource('api/v1.0/:path', {path: '@path'});
-	Photo.get({path: $state.params.path}, function(photo) {
-		angular.merge($scope, photo);
-		$scope.path = $state.path;
-	});
+	var Resource = $resource('api/v1.0/:path/:id', $state.params);
+	console.log($state.params);
+//	if ($state.params.list) {
+//		$scope.list = $state.params.list;
+//	} else {
+		Resource.get({}, function(data) {
+			angular.merge($scope, data);
+			$scope.name = $state.current.name;
+		});
+		$state.params.initialize =false;
+//	}
 }])
 ;

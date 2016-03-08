@@ -18,13 +18,13 @@
 		<header>
 			<h1>Angular Route Demo</h1>
 			<nav>
-				<div><a ui-sref="view({path:'girl'})">あかちゃん</a></div>
-				<div><a ui-sref="view({path:'wheel'})">観覧車</a></div>
-				<div><a ui-sref="view({path:'flower'})">花畑</a></div>
-				<div><a ui-sref="view({path:'couple'})">カップル</a></div>
+				<div><a ui-sref="list({path:'baby', initialize:true})">あかちゃん</a></div>
+				<div><a ui-sref="list({path:'wheel'})">観覧車</a></div>
+				<div><a ui-sref="list({path:'flower'})">花畑</a></div>
+				<div><a ui-sref="list({path:'couple'})">カップル</a></div>
 			</nav>
 		</header>
-		<article ui-view="view" ng-cloak="" class="pageContainer"></article>
+		<article ui-view="" ng-cloak="" class="pageContainer"></article>
 		<footer><small>copyright(c)sample.com</small></footer>
 	</div>
 </body>

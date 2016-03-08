@@ -1,0 +1,10 @@
+<div>
+	パス：{{name}}
+	<table>
+	<tbody>
+		<tr ng-repeat="photo in list">
+			<td><a ui-sref=".page({id:photo.id,list:list})"><img ng-src="{{photo.img}}" alt="" style="width:100px;" /></a></td>
+		</tr>
+	</tbody>
+	</table>
+</div>

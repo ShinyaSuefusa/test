@@ -2,9 +2,7 @@ package test;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @EnableAutoConfiguration
@@ -12,20 +10,20 @@ public class ViewController {
 
 	@RequestMapping("/")
 	public String index() {
+		System.out.println("index");
 		return "index";
 	}
 	
+	@RequestMapping("/list")
+	public String list() {
+		System.out.println("list");
+		return "list";
+	}
+		
 	@RequestMapping("/page")
 	public String page() {
+		System.out.println("page");
 		return "page";
 	}
-	
-	@RequestMapping("/view")
-	public String view(
-		@RequestParam(value="name", required=false, defaultValue="World")
-		String name, Model model) {
-		model.addAttribute("name", name);
-		return "view";
-	}
-	
+		
 }
